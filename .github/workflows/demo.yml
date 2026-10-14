@@ -1,0 +1,20 @@
+name: Demo Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Message to print"
+        required: false
+        default: "Hello from GitHub Actions!"
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print message
+        run: echo "${{ inputs.message }}"
+
+      - name: Show date
+        run: date
